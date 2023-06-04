@@ -43,7 +43,11 @@ class PuramoController extends Controller
         $puramo = new Puramo();
         $puramo->title = $request->input('title');
         $puramo->user_id = Auth::id();
-        $puramo->image = $request->input('image');
+        $image = $request->file('image');
+
+        $path = isset($image) ? $image->store('items', 'public') : '';
+
+        $puramo->image = $path;
 
         $puramo->save();
 

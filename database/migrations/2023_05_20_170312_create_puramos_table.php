@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('puramos', function (Blueprint $table) {
             $table->id();
             $table->string("title");
-            $table->binary("image");
+            $table->string("image");
             $table->foreignId("user_id")->constrained()->cascadeOnDelete()->nullable();
             $table->timestamps();
         });
