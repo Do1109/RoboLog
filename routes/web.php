@@ -24,4 +24,4 @@ Route::get('/scrape', 'App\Http\Controllers\PuramoController@scrape')->name('scr
 
 Route::delete('/index/{puramo}', 'App\Http\Controllers\PuramoController@destroy')->name('destroy');
 
-Route::post('/home', 'App\Http\Controllers\Auth\LoginController@dologout')->name('logout');
+Route::post('/', 'App\Http\Controllers\Auth\LoginController@dologout')->name('logout');
