@@ -20,8 +20,6 @@ Route::post('/index', 'App\Http\Controllers\PuramoController@store')->name('stor
 
 Route::get('/detail/{id}', 'App\Http\Controllers\PuramoController@detail')->name('detail');
 
-Route::get('/scrape', 'App\Http\Controllers\PuramoController@scrape')->name('scrape');
-
 Route::delete('/index/{puramo}', 'App\Http\Controllers\PuramoController@destroy')->name('destroy');
 
-Route::post('/', 'App\Http\Controllers\Auth\LoginController@dologout')->name('logout');
+Route::post('/home', 'App\Http\Controllers\Auth\LoginController@logout')->name('logout');

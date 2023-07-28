@@ -9,6 +9,12 @@ h1 {
 sans-serif;
 }
 
+h4 {
+  display: flex;
+  justify-content: center; 
+  align-items: center;
+}
+
 .navbar {
   position: fixed;
     width: 100%;

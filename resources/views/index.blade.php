@@ -30,17 +30,18 @@
           SUBMISSION OF WORK
           </a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-shopping-cart"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>
-          RELATED PRODUCTS
-          </a>
-        </li>
-        <li class="nav-item">
+        
+        <li class="nav-item nav-link">
         <form action="{{ route('logout') }}" method="post">
         @csrf
           <button type="submit" class="nav-link" style="background: none; border: none; padding: 0; cursor: pointer;">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-shopping-cart"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>
+          <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-door-exit" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+            <path d="M13 12v.01"></path>
+            <path d="M3 21h18"></path>
+            <path d="M5 21v-16a2 2 0 0 1 2 -2h7.5m2.5 10.5v7.5"></path>
+            <path d="M14 7h7m-3 -3l3 3l-3 3"></path>
+          </svg>
             LOGOUT  
           </button>
         </form>
@@ -64,6 +65,7 @@
           <a href="{{ route('detail', $puramo->id) }}">
           <h4 style="display: flex; justify-content: center; align-items: center;">{{ $puramo->title }}</h4>
           <img id="_image" src="{{ asset('storage/'.$puramo->image) }}" alt="Image" style="max-width: 90%; margin-left: 5%; max-height: 100%;">
+          <h4 style="display: flex; justify-content: center; align-items: center;">製作者:{{ $puramo->user->name }}</h4>
         </div>
       </div>
     </div>

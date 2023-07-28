@@ -19,11 +19,18 @@
       <div class="col-12">
         <img id="_image" src="{{ asset('storage/'.$puramo->image) }}" class="img-thumbnail" alt="Image">
         <h2>作品名:{{ $puramo->title }}</h2><br>
+        <h4>製作者:{{ $puramo->user->name }}</h4><br>
         <h6>製作者コメント:{{ $puramo->comment }}</h6>
+        @if ($puramo->user_id == Auth::user()->id) 
         <form action="{{ route('destroy', $puramo) }}" method="post">
           @csrf
           @method('delete')
           <button type="submit">削除</button>
+        </form>
+        @endif
+        <form action="{{ route('index') }}" method="get">
+          @csrf
+          <button type="submit">戻る</button>
         </form>
       </div>
     </div>
